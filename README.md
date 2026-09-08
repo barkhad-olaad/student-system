@@ -153,7 +153,7 @@ Verify Node.js and npm:
 1.Clone the repository:
 
     git clone https://github.com/barkhad-olaad/student-system.git
-    cd student-system
+    cd student-management-system
 
 2. Install Dependencies
 
