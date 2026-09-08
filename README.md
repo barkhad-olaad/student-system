@@ -1,19 +1,33 @@
 # StudentHub Management System
 
-StudentHub is a web-based Student Management System designed to manage
-students, teachers, departments, courses, enrollment, attendance,
-grades, fees, timetables, announcements, and user accounts.
+StudentHub is a web-based Student Management System designed to help
+educational institutions manage students, teachers, departments,
+programs, courses, enrollment, attendance, grades, fees, timetables,
+announcements, and user accounts.
 
-## Current Features
+## Features
+
+### Authentication & User Management
 
 - User registration
 - Administrator account approval
 - Role-based authentication
+- Secure password hashing
+- JWT-based authentication
+- Account status management
+
+### Administration
+
 - Admin dashboard
+- Account approvals
+- Activity log
 - Student management
 - Teacher management
 - Department management
 - Program management
+
+### Academic Management
+
 - Course management
 - Enrollment management
 - Attendance management
@@ -21,38 +35,48 @@ grades, fees, timetables, announcements, and user accounts.
 - Fee management
 - Timetable management
 - Announcements
-- Account approvals
-- Activity log
 
-## screenshots
+### Student Features
+
+- Student dashboard
+- Student enrollment information
+- Academic information
+- Attendance information
+- Account management
+
+---
+
+## Screenshots
 
 ### Login
 
-![StudentHubs](screenshots/login.png)
-
-### Admin Dashboard
-
-![Admin Dashboard](screenshots/admin_dashboard.png)
-
-### Account Approvals
-
-![Account Approvals](screenshots/account_approvals.png)
-
-### Student Management
-
-![Student Management](screenshots/students.png)
+![StudentHub Login](screenshots/login.png)
 
 ### Registration
 
-![Registration](screenshots/register.png)
+![StudentHub Registration](screenshots/register.png)
 
-### Enrollments
+### Admin Dashboard
 
-![Enrollments](screenshots/enrollments.png)
+![StudentHub Admin Dashboard](screenshots/admin_dashboard.png)
 
-### student-dashboard
+### Account Approvals
 
-![Student-dashboard](screenshots/student_dashboard.png)
+![StudentHub Account Approvals](screenshots/account_approvals.png)
+
+### Student Management
+
+![StudentHub Student Management](screenshots/students.png)
+
+### Enrollment
+
+![StudentHub Enrollment](screenshots/enrollments.png)
+
+### Student Dashboard
+
+![StudentHub Student Dashboard](screenshots/student_dashboard.png)
+
+---
 
 ## Technology Stack
 
@@ -68,12 +92,142 @@ grades, fees, timetables, announcements, and user accounts.
 
 - Node.js
 - Express
-- JWT authentication
+- JWT
 - bcrypt
+- CORS
+- MySQL2
 
 ### Database
 
-- MYSQL
+- MySQL
+
+## Project Structure
+
+student-management-system-fi/
+│
+├── client/
+│ ├── src/
+│ ├── index.html
+│ ├── package.json
+│ └── .env.example
+│
+├── server/
+│ ├── src/
+│ ├── uploads/
+│ ├── package.json
+│ └── .env.example
+│
+├── database/
+│ ├── schema.sql
+│ └── seed.sql
+│
+├── screenshots/
+│ ├── login.png
+│ ├── register.png
+│ ├── admin_dashboard.png
+│ ├── account_approvals.png
+│ ├── students.png
+│ ├── enrollments.png
+│ └── student_dashboard.png
+│
+├── .gitignore
+├── package.json
+└── README.md
+
+## installation & setup
+
+### prerequisites
+
+Before running StudentHub, install:
+
+    Node.js
+    npm
+    MySQL or MariaDB
+    Git
+
+Verify Node.js and npm:
+
+    node --version
+    npm --version
+
+1.Clone the repository:
+
+    git clone https://github.com/barkhad-olaad/student-system.git
+    cd student-system
+
+2. Install Dependencies
+
+Install the root dependencies:
+
+    npm install
+
+Then install the frontend and backend dependencies:
+
+    npm run install-all
+
+3. Configure the Database
+
+Create a MySQL database in XAMPP named:
+
+student_management
+
+Then run the database schema:
+
+database/schema.sql
+
+If you want the sample/demo data, also run:
+
+database/seed.sql
+
+4. Configure the Backend
+
+Inside the server directory, create a file named:
+
+    .env
+
+Use server/.env.example as the template.
+
+Never commit your real .env file or database credentials to GitHub.
+
+5. Configure the Frontend
+
+Inside the client directory, create:
+
+    .env
+
+Based on client/.env.example:
+
+VITE_API_URL=http://localhost:5000/api
+
+6. Running the Application
+
+Option 1 — Run Frontend and Backend Together
+
+From the project root:
+
+    npm run dev
+
+The root project is configured to start both the server and client concurrently.
+
+The application will normally be available at:
+
+http://localhost:5173
+
+The backend runs on:
+
+http://localhost:5000
+
+Option 2 — Run Separately
+
+Start the backend
+
+    npm run server
+
+Start the frontend
+
+Open another terminal:
+
+    npm run client
 
 ## Future Features
 
