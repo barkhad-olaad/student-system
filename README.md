@@ -1,13 +1,14 @@
 # StudentHub Management System
 
-StudentHub is a web-based Student Management System designed to help
-educational institutions manage students, teachers, departments,
-programs, courses, enrollment, attendance, grades, fees, timetables,
-announcements, and user accounts.
+StudentHub is a web-based **Student Management System** designed to help educational institutions manage students, teachers, departments, programs, courses, enrollment, attendance, grades, fees, timetables, announcements, and user accounts.
+
+> 🚧 **StudentHub is currently under active development.** Some features are implemented, while others are planned for future releases.
+
+---
 
 ## Features
 
-### Authentication & User Management
+### 🔐 Authentication & User Management
 
 - User registration
 - Administrator account approval
@@ -16,7 +17,7 @@ announcements, and user accounts.
 - JWT-based authentication
 - Account status management
 
-### Administration
+### 🛠️ Administration
 
 - Admin dashboard
 - Account approvals
@@ -26,7 +27,7 @@ announcements, and user accounts.
 - Department management
 - Program management
 
-### Academic Management
+### 🎓 Academic Management
 
 - Course management
 - Enrollment management
@@ -36,7 +37,7 @@ announcements, and user accounts.
 - Timetable management
 - Announcements
 
-### Student Features
+### 👨‍🎓 Student Features
 
 - Student dashboard
 - Student enrollment information
@@ -100,131 +101,207 @@ announcements, and user accounts.
 ### Database
 
 - MySQL
+- MariaDB compatible
+
+---
 
 ## Project Structure
 
-    student-management-system-fi/
-    │
-    ├── client/
-    │ ├── src/
-    │ ├── index.html
-    │ ├── package.json
-    │ └── .env.example
-    │
-    ├── server/
-    │ ├── src/
-    │ ├── uploads/
-    │ ├── package.json
-    │ └── .env.example
-    │
-    ├── database/
-    │ ├── schema.sql
-    │ └── seed.sql
-    │
-    ├── screenshots/
-    │ ├── login.png
-    │ ├── register.png
-    │ ├── admin_dashboard.png
-    │ ├── account_approvals.png
-    │ ├── students.png
-    │ ├── enrollments.png
-    │ └── student_dashboard.png
-    │
-    ├── .gitignore
-    ├── package.json
-    └── README.md
+```text
+student-system/
+│
+├── client/
+│   ├── src/
+│   ├── index.html
+│   ├── package.json
+│   └── .env.example
+│
+├── server/
+│   ├── src/
+│   ├── uploads/
+│   ├── package.json
+│   └── .env.example
+│
+├── database/
+│   ├── schema.sql
+│   └── seed.sql
+│
+├── screenshots/
+│   ├── login.png
+│   ├── register.png
+│   ├── admin_dashboard.png
+│   ├── account_approvals.png
+│   ├── students.png
+│   ├── enrollments.png
+│   └── student_dashboard.png
+│
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-## installation & setup
+---
 
-### prerequisites
+# Installation & Setup
 
-Before running StudentHub, install:
+## Prerequisites
 
-    Node.js
-    npm
-    MySQL or MariaDB
-    Git
+Before running StudentHub, make sure the following are installed:
+
+- [Node.js](https://nodejs.org/)
+- npm
+- MySQL or MariaDB
+- Git
 
 Verify Node.js and npm:
 
-    bash
-     node --version
-     npm --version
+```bash
+node --version
+npm --version
+```
 
-1.Clone the repository:
+---
 
-    git clone https://github.com/barkhad-olaad/student-system.git
-    cd student-management-system
+## 1. Clone the Repository
 
-2. Install Dependencies
+```bash
+git clone https://github.com/barkhad-olaad/student-system.git
+cd student-system
+```
+
+---
+
+## 2. Install Dependencies
 
 Install the root dependencies:
 
-    bash
-     npm install
+```bash
+npm install
+```
 
 Then install the frontend and backend dependencies:
 
-    bash
-      npm run install-all
+```bash
+npm run install-all
+```
 
-3. Configure the Database
+---
 
-Create a MySQL database in XAMPP named:
+## 3. Configure the Database
 
+Create a MySQL database named:
+
+```text
 student_management
+```
 
-Then run the database schema:
+If you are using XAMPP, you can create the database through **phpMyAdmin**.
 
+Then execute the database schema:
+
+```text
 database/schema.sql
+```
 
-If you want the sample/demo data, also run:
+If you want to populate the database with sample/demo data, also execute:
 
+```text
 database/seed.sql
+```
 
-4. Configure the Backend
+> **Note:** Make sure your MySQL/MariaDB server is running before starting the application.
 
-Inside the server directory, create a file named:
+---
 
-    .env
+## 4. Configure the Backend
 
-Use server/.env.example as the template.
+Inside the `server` directory, create a file named:
 
-Never commit your real .env file or database credentials to GitHub.
+```text
+.env
+```
 
-5. Configure the Frontend
+Use the following file as your template:
 
-Inside the client directory, create:
+```text
+server/.env.example
+```
 
-    .env
+Configure the database connection, JWT secret, server port, and other required environment variables according to the `.env.example` file.
 
-Based on client/.env.example:
+> ⚠️ **Security:** Never commit your real `.env` file or database credentials to GitHub.
 
-6. Running the Application
+---
 
-Option 1 — Run Frontend and Backend Together
+## 5. Configure the Frontend
+
+Inside the `client` directory, create:
+
+```text
+.env
+```
+
+Use:
+
+```text
+client/.env.example
+```
+
+as the template.
+
+For a local development environment, the API URL will normally be:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+---
+
+## 6. Run the Application
+
+### Option 1 — Run Frontend and Backend Together
 
 From the project root:
 
-    npm run dev
+```bash
+npm run dev
+```
 
-Option 2 — Run Separately
+This starts both the frontend and backend using the root project's development script.
 
-Start the backend
+The frontend is normally available at:
 
-    npm run server
+```text
+http://localhost:5173
+```
 
-Start the frontend
+The backend is normally available at:
 
-Open another terminal:
+```text
+http://localhost:5000
+```
 
-    npm run client
+### Option 2 — Run Frontend and Backend Separately
 
-## Future Features
+Start the backend:
 
-The following features are planned for future releases of StudentHub:
+```bash
+npm run server
+```
 
-### Authentication & User Management
+Then open another terminal and start the frontend:
+
+```bash
+npm run client
+```
+
+---
+
+# Future Features
+
+The following features are planned for future releases of StudentHub.
+
+## 🔐 Authentication & User Management
 
 - Password reset and account recovery
 - Email verification
@@ -234,7 +311,7 @@ The following features are planned for future releases of StudentHub:
 - Improved session and token management
 - Account activation, suspension, and deactivation controls
 
-### Registration & Approval Workflow
+## 📝 Registration & Approval Workflow
 
 - Registration status tracking
 - Administrator approval notifications
@@ -243,7 +320,7 @@ The following features are planned for future releases of StudentHub:
 - Email notifications for approval and rejection
 - Improved application review interface
 
-### Student Management
+## 👨‍🎓 Student Management
 
 - Advanced student search and filtering
 - Student profile enhancements
@@ -253,7 +330,7 @@ The following features are planned for future releases of StudentHub:
 - Academic history
 - Student transfer and withdrawal management
 
-### Teacher Management
+## 👨‍🏫 Teacher Management
 
 - Teacher profile management
 - Teacher workload management
@@ -261,7 +338,7 @@ The following features are planned for future releases of StudentHub:
 - Teacher assignments
 - Teacher performance records
 
-### Academic Management
+## 🎓 Academic Management
 
 - Academic year and semester management
 - Class and section management
@@ -270,7 +347,7 @@ The following features are planned for future releases of StudentHub:
 - Academic calendar
 - Curriculum management
 
-### Attendance
+## 📋 Attendance
 
 - Attendance reports
 - Attendance statistics and analytics
@@ -278,7 +355,7 @@ The following features are planned for future releases of StudentHub:
 - Attendance notifications
 - Exportable attendance reports
 
-### Grades & Results
+## 📊 Grades & Results
 
 - Grade calculation and GPA management
 - Semester result generation
@@ -287,7 +364,7 @@ The following features are planned for future releases of StudentHub:
 - Grade analytics
 - Result publishing controls
 
-### Finance
+## 💰 Finance
 
 - Student payment management
 - Fee structures
@@ -296,7 +373,7 @@ The following features are planned for future releases of StudentHub:
 - Financial reports
 - Printable receipts
 
-### Communication
+## 📢 Communication
 
 - In-system notifications
 - Email notifications
@@ -304,7 +381,7 @@ The following features are planned for future releases of StudentHub:
 - Student-teacher communication
 - Important event reminders
 
-### Reports & Analytics
+## 📈 Reports & Analytics
 
 - Student enrollment statistics
 - Attendance analytics
@@ -314,7 +391,7 @@ The following features are planned for future releases of StudentHub:
 - Dashboard charts and visualizations
 - PDF and Excel report exports
 
-### System Administration
+## ⚙️ System Administration
 
 - Role and permission management
 - System settings
@@ -323,7 +400,7 @@ The following features are planned for future releases of StudentHub:
 - Data import and export
 - System activity monitoring
 
-### User Experience
+## 🎨 User Experience
 
 - Dark mode
 - Theme preferences
@@ -333,7 +410,7 @@ The following features are planned for future releases of StudentHub:
 - Improved navigation and search
 - Consistent StudentHub design system
 
-### Security
+## 🛡️ Security
 
 - Two-factor authentication (2FA)
 - Login attempt monitoring
@@ -341,7 +418,7 @@ The following features are planned for future releases of StudentHub:
 - Improved authorization controls
 - Security audit improvements
 
-### Deployment
+## 🚀 Deployment
 
 - Production deployment configuration
 - Docker support
@@ -352,9 +429,24 @@ The following features are planned for future releases of StudentHub:
 
 > **Note:** These features are planned and may be introduced incrementally in future releases.
 
-## Project Status
+---
 
-🚧 Active development
+# Project Status
 
-This project is currently under development. Features and UI are
-still being improved.
+🚧 **Active Development**
+
+StudentHub is currently under active development. Features, functionality, security, and user interface components are continuously being improved.
+
+---
+
+## License
+
+This project is currently being developed as an educational/software engineering project.
+
+---
+
+## Author
+
+**Barkhad Olaad**
+
+GitHub: [@barkhad-olaad](https://github.com/barkhad-olaad)
