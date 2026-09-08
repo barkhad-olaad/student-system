@@ -30,6 +30,30 @@ grades, fees, timetables, announcements, and user accounts.
 
 ![StudentHubs](screenshots/login.png)
 
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin_dashboard.png)
+
+### Account Approvals
+
+![Account Approvals](screenshots/account_approvals.png)
+
+### Student Management
+
+![Student Management](screenshots/students.png)
+
+### Registration
+
+![Registration](screenshots/register.png)
+
+### Enrollments
+
+![Enrollments](screenshots/enrollments.png)
+
+### student-dashboard
+
+![Student-dashboard](screenshots/student_dashboard.png)
+
 ## Technology Stack
 
 ### Frontend
