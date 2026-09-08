@@ -103,36 +103,36 @@ announcements, and user accounts.
 
 ## Project Structure
 
-student-management-system-fi/
-│
-├── client/
-│ ├── src/
-│ ├── index.html
-│ ├── package.json
-│ └── .env.example
-│
-├── server/
-│ ├── src/
-│ ├── uploads/
-│ ├── package.json
-│ └── .env.example
-│
-├── database/
-│ ├── schema.sql
-│ └── seed.sql
-│
-├── screenshots/
-│ ├── login.png
-│ ├── register.png
-│ ├── admin_dashboard.png
-│ ├── account_approvals.png
-│ ├── students.png
-│ ├── enrollments.png
-│ └── student_dashboard.png
-│
-├── .gitignore
-├── package.json
-└── README.md
+    student-management-system-fi/
+    │
+    ├── client/
+    │ ├── src/
+    │ ├── index.html
+    │ ├── package.json
+    │ └── .env.example
+    │
+    ├── server/
+    │ ├── src/
+    │ ├── uploads/
+    │ ├── package.json
+    │ └── .env.example
+    │
+    ├── database/
+    │ ├── schema.sql
+    │ └── seed.sql
+    │
+    ├── screenshots/
+    │ ├── login.png
+    │ ├── register.png
+    │ ├── admin_dashboard.png
+    │ ├── account_approvals.png
+    │ ├── students.png
+    │ ├── enrollments.png
+    │ └── student_dashboard.png
+    │
+    ├── .gitignore
+    ├── package.json
+    └── README.md
 
 ## installation & setup
 
@@ -147,8 +147,9 @@ Before running StudentHub, install:
 
 Verify Node.js and npm:
 
-    node --version
-    npm --version
+bash
+node --version
+npm --version
 
 1.Clone the repository:
 
@@ -159,11 +160,13 @@ Verify Node.js and npm:
 
 Install the root dependencies:
 
-    npm install
+bash
+npm install
 
 Then install the frontend and backend dependencies:
 
-    npm run install-all
+bash
+npm run install-all
 
 3. Configure the Database
 
@@ -197,8 +200,6 @@ Inside the client directory, create:
 
 Based on client/.env.example:
 
-VITE_API_URL=http://localhost:5000/api
-
 6. Running the Application
 
 Option 1 — Run Frontend and Backend Together
@@ -206,16 +207,6 @@ Option 1 — Run Frontend and Backend Together
 From the project root:
 
     npm run dev
-
-The root project is configured to start both the server and client concurrently.
-
-The application will normally be available at:
-
-http://localhost:5173
-
-The backend runs on:
-
-http://localhost:5000
 
 Option 2 — Run Separately
 
