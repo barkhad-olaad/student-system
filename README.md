@@ -43,7 +43,7 @@ grades, fees, timetables, announcements, and user accounts.
 
 ### Database
 
-- MariaDB
+- MYSQL
 
 ## Project Status
 
