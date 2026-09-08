@@ -24,6 +24,12 @@ grades, fees, timetables, announcements, and user accounts.
 - Account approvals
 - Activity log
 
+## screenshots
+
+### Login
+
+![StudentHubs](screenshots/login.png)
+
 ## Technology Stack
 
 ### Frontend
