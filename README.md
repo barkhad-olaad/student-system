@@ -147,9 +147,9 @@ Before running StudentHub, install:
 
 Verify Node.js and npm:
 
-bash
-node --version
-npm --version
+    bash
+     node --version
+     npm --version
 
 1.Clone the repository:
 
@@ -160,13 +160,13 @@ npm --version
 
 Install the root dependencies:
 
-bash
-npm install
+    bash
+     npm install
 
 Then install the frontend and backend dependencies:
 
-bash
-npm run install-all
+    bash
+      npm run install-all
 
 3. Configure the Database
 
